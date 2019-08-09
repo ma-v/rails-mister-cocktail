@@ -1,18 +1,27 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80);">
-    <div class="container">
-      <h1>Find the best cocktails !</h1>
-      <p>For your dates...</p>
-    </div>
+  <div class="container">
+    <h1>Find the best cocktails !</h1>
+    <p>For your dates...</p>
+  </div>
 </div>
 
 <div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
+      <div class="card-box">
       <%= link_to(cocktail_path(cocktail)) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.url %>)">
-        <%= cocktail.name.capitalize %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo, height: 180, crop: :fill %>)">
+          <%= cocktail.name.capitalize %>
+          </div>
+          <% end %>
+
+        <div class="card-delete">
+          <%= link_to(cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }) do %>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
+

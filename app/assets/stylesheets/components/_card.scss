@@ -17,11 +17,15 @@
   }
 }
 
+.card-box {
+  position: relative;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 16px
+  margin-top: 16px;
 }
 
 // Smallest device
@@ -91,4 +95,11 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: white;
 }

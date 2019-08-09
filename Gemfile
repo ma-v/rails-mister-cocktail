@@ -63,3 +63,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem "select2-rails"
+
+#images hosting
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'

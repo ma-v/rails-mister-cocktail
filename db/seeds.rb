@@ -17,6 +17,7 @@ user = JSON.parse(user_serialized)
 puts "Cleaning DB"
 
 Ingredient.destroy_all
+Cocktail.destroy_all
 
 puts "Creating Ingredients"
 
