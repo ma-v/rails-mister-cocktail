@@ -2,6 +2,7 @@ class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show, :destroy]
 
   def index
+    # @cocktails = Cocktail.search(params[:search])
     @cocktails = Cocktail.all
   end
 
@@ -35,6 +36,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktails_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :search)
   end
 end
